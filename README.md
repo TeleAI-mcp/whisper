@@ -1,46 +1,42 @@
 # Whisper
 
-Whisper is a general-purpose speech recognition model. It is trained on a large dataset of diverse audio and is also a multi-task model that can perform multilingual speech recognition as well as speech translation and language identification.
+OpenAI's robust speech recognition system.
 
-## Approach
+![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-![Approach](https://github.com/openai/whisper/raw/main/approach.png)
+## Installation
 
-A Transformer sequence-to-sequence model is trained on various speech processing tasks, including multilingual speech recognition, speech translation, spoken language identification, and voice activity detection. All of these tasks are jointly represented as a sequence of tokens to be predicted by the decoder, allowing a single model to replace many different stages of a traditional speech processing pipeline. The multitask training format uses a set of special tokens that serve as task specifiers or classification targets.
-
-## Setup
-
-You need Python 3.9+ and PyTorch 1.10.1 to use this code. You also need to install the OpenAI Whisper model:
+To install Whisper, run:
 
 ```bash
 pip install -U openai-whisper
 ```
 
-Alternatively, the following command will allow you to upgrade Whisper to its latest version (also ensuring you have the required dependencies):
+Alternatively, the following command will avoid pulling a large number of unnecessary dependencies:
 
 ```bash
-pip install --upgrade --force-reinstall "openai-whisper @ https://github.com/openai/whisper/archive/main.tar.gz"
+pip install -U openai-whisper --no-deps
+pip install -U tqdm
 ```
+
+## Requirements
+
+- Python 3.9+
+- PyTorch
+- ffmpeg
 
 ## Usage
 
-The following command will transcribe speech in audio files:
+The following command will transcribe audio from a file:
 
 ```bash
-whisper audio.flac audio.mp3 audio.wav --model medium
+whisper audio.mp3
 ```
 
-The default setting (which selects the `small` model) works well for transcribing English. You can increase the transcription accuracy by using a larger model, but this will be slower. For more information, run:
+## License
 
-```bash
-whisper --help
-```
-
-## Web Demo
-
-[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/openai/whisper)
-
-## Related Projects
+MIT License
 
 1. related project [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
 2. related project [whisperX](https://github.com/m-bain/whisperX)
