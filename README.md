@@ -32,5 +32,5 @@ print(result["text"])
 
 The model weights are released under the MIT License. See [LICENSE](LICENSE) for more information.
 
-1. related project [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
-2. related project [whisperX](https://github.com/m-bain/whisperX)
+1. related project [SYSTRAN/faster-whisper](https://github.com/SYSTRAN/faster-whisper)
+2. related project [m-bain/whisperX](https://github.com/m-bain/whisperX)
