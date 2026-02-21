@@ -2,41 +2,35 @@
 
 OpenAI's robust speech recognition system.
 
-![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-
 ## Installation
 
-To install Whisper, run:
-
 ```bash
-pip install -U openai-whisper
+pip install openai-whisper
 ```
-
-Alternatively, the following command will avoid pulling a large number of unnecessary dependencies:
-
-```bash
-pip install -U openai-whisper --no-deps
-pip install -U tqdm
-```
-
-## Requirements
-
-- Python 3.9+
-- PyTorch
-- ffmpeg
 
 ## Usage
 
-The following command will transcribe audio from a file:
+```python
+import whisper
 
-```bash
-whisper audio.mp3
+model = whisper.load_model("base")
+result = model.transcribe("audio.mp3")
+print(result["text"])
 ```
+
+## Available Models
+
+| Size | Parameters | English-only model | Multilingual model | Required VRAM | Relative speed |
+|------|------------|-------------------|-------------------|---------------|----------------|
+| tiny | 39 M | tiny.en | tiny | ~1 GB | ~32x |
+| base | 74 M | base.en | base | ~1 GB | ~16x |
+| small | 244 M | small.en | small | ~2 GB | ~6x |
+| medium | 769 M | medium.en | medium | ~5 GB | ~2x |
+| large | 1550 M | N/A | large | ~10 GB | 1x |
 
 ## License
 
-MIT License
+The model weights are released under the MIT License. See [LICENSE](LICENSE) for more information.
 
 1. related project [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
 2. related project [whisperX](https://github.com/m-bain/whisperX)
